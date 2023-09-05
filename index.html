@@ -5,13 +5,717 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:opsz,wght@9..40,100&family=Manrope&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <title>Document</title>
 </head>
+<style>
+    body {
+        font-family: 'DM Sans', sans-serif;
+        font-family: 'Manrope', sans-serif;
+    }
 
-<body>
-    <h1 class="text-gray-800 underline text-xl text-center my-12">Welcomeback Rajia Khan </h1>
+    .overflow {
+        overflow-y: auto;
+    }
+</style>
 
+<body class="overflow-x-hidden">
+    <div
+        class="backdrop-blur-md bg-cover bg-gray-50  bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20607.png')] ">
+        <!-- Navbar desktop screen -->
+        <div
+            class="lg:max-w-[1440px] md:max-w-[744px] max-w-[375px]  px-5 lg:py-16 md:py-7 py-6 m-auto bg-no-repeat  bg-right  md:bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%203%20%281%29.png')]">
+            <div class="lg:max-w-[1180px]  w-full  m-auto ">
+                <div class="lg:block hidden">
+                    <div class="flex justify-between items-center">
+                        <div class="flex items-center gap-3 cursor-pointer">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Frame%20348%20%281%29.svg" />
+                            <h1 class="font-bold text-[#193766] text-lg">Wumbo</h1>
+                        </div>
+                        <div class="flex items-center gap-16">
+                            <button
+                                class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-[#193766] text-[#00153399] hover:text-[#193766] focus:text-[#193766] hover:font-bold focus:font-bold cursor-pointer ">
+                                Top
+                            </button>
+                            <button
+                                class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-[#193766] text-[#00153399] hover:text-[#193766] focus:text-[#193766] hover:font-bold focus:font-bold  cursor-pointer">
+                                For Everyone
+                            </button>
+                            <button
+                                class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-[#193766] text-[#00153399] hover:text-[#193766] focus:text-[#193766] hover:font-bold focus:font-bold cursor-pointer">
+                                Features
+                            </button>
+                            <button
+                                class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-[#193766] text-[#00153399] hover:text-[#193766] focus:text-[#193766] hover:font-bold focus:font-bold cursor-pointer">
+                                Preview
+                            </button>
+                            <button
+                                class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-[#193766] text-[#00153399] hover:text-[#193766] focus:text-[#193766] hover:font-bold focus:font-bold cursor-pointer">
+                                License
+                            </button>
+                        </div>
+                        <div class="">
+                            <button
+                                class="bg-white text-[#3B82F6] font-bold text-lg w-36 rounded-lg py-2.5 animate-bounce hover:animate-none focus:animate-none">
+                                Download
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <!-- Navbar desktop screen -->
+
+
+                <nav>
+                    <div class="  w-full flex lg:hidden justify-between items-center  top-0 z-40  bg-transparent">
+                        <div aria-label=" logo" role="img" tabindex="0" class="">
+                            <div class="flex items-center justify-between gap-3 cursor-pointer">
+                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Frame%20348%20%281%29.svg" />
+                                <h1 class="font-bold text-[#193766] text-lg">Wumbo</h1>
+                            </div>
+                        </div>
+                        <div>
+                            <button id="menu" aria-label="open menu"
+                                class="focus:outline-none focus:ring-2 focus:ring-white rounded-md text-white"
+                                onclick="sidebarHandler(true)">
+                                <img class=""
+                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/left-aligned-with-search-bar-and-icon-svg5.svg"
+                                    alt="menu" />
+                            </button>
+                        </div>
+                    </div>
+                    <!--Mobile responsive sidebar-->
+                    <div class="w-full  left-0  z-10 fixed overflow z-40 top-0 h-screen flex-col justify-between lg:hidden pb-12 transition duration-150 ease-in-out bg-[#193766]"
+                        id="mobile-nav">
+                        <div class="px-5">
+                            <div class="mt-6 flex w-full items-center justify-between">
+                                <div class="flex items-center justify-between w-full">
+
+                                    <div class="flex gap-2 items-center">
+                                        <div class="">
+                                            <img class="  "
+                                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Frame%20348%20%281%29.svg" />
+                                        </div>
+                                        <div class="">
+                                            <h1 class="font-bold text-white text-sm ">Wumbo</h1>
+                                        </div>
+                                    </div>
+                                    <button id="cross"
+                                        class="focus:ring-2 focus:ring-white rounded-md focus:outline-none hidden text-white"
+                                        onclick="sidebarHandler(false)">
+                                        <img aria-label="Close"
+                                            src="https://tuk-cdn.s3.amazonaws.com/can-uploader/black-simple-with-icons-svg3.svg"
+                                            alt="cross" />
+                                    </button>
+                                </div>
+                            </div>
+                            <ul class="f-m-m">
+                                <li class="pt-8">
+                                    <button
+                                        class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-gray-50 text-gray-50 hover:text-white focus:text-white hover:font-bold focus:font-bold cursor-pointer ">
+                                        Top
+                                    </button>
+                                </li>
+                                <li class="text-white pt-8">
+                                    <button
+                                        class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-gray-50 text-gray-50 hover:text-white focus:text-white hover:font-bold focus:font-bold  cursor-pointer">
+                                        For Everyone
+                                    </button>
+                                </li>
+                                <li class="pt-8">
+                                    <button
+                                        class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-gray-50 text-gray-50 hover:text-white focus:text-white hover:font-bold focus:font-bold cursor-pointer">
+                                        Features
+                                    </button>
+                                </li>
+                                <li class="pt-8">
+                                    <button
+                                        class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-gray-50 text-gray-50 hover:text-white focus:text-white hover:font-bold focus:font-bold cursor-pointer">
+                                        Preview
+                                    </button>
+                                </li>
+                                <li class="pt-8">
+                                    <button
+                                        class="md:text-base text-sm hover:border-b-2 hover:-mb-0.5 focus:border-b-2 focus:-mb-0.5 border-gray-50 text-gray-50 hover:text-white focus:text-white hover:font-bold focus:font-bold cursor-pointer">
+                                        License
+                                    </button>
+                                </li>
+                                <li class="mt-12">
+                                    <button
+                                        class="bg-white text-[#3B82F6] font-bold text-lg w-full rounded-lg py-2.5 animate-bounce hover:animate-none focus:animate-none">
+                                        Download
+                                    </button>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </nav>
+
+                <div class="lg:flex justify-between items-center mt-8">
+                    <div class=" lg:w-[537px] w-full ">
+                        <h1
+                            class="lg:text-[50px] xl:text-[64px]  2xl:text-[64px]  md:text-[40px] md:text-[32px] text-[20px] font-normal text-[#193766] leading-tight tracking-wide md:text-left text-center">
+                            Beautiful Design
+                            For
+                            <span class="font-bold border-b-4 border-[#193766] -pb-4 "> Social Media</span>
+                            Content
+                        </h1>
+                        <h1
+                            class="lg:text-[18px] xl:text-[22px] 2xl:text-[22px] md:text-[15px] text-[14px] text-[#697B98] mt-5 md:text-left text-center leading-5 lg:leading-9">
+                            Figma social media content templates for branding, marketing, insights, and more. Free
+                            for
+                            personal and commercial use!</h1>
+                        <div class="lg:flex mt-5 gap-4">
+                            <button
+                                class="flex items-center justify-center duration-150 bg-[#3B82F6] hover:bg-blue-600 focus:bg-blue-600  lg:w-[214px] w-full md:py-5 py-3 rounded-lg gap-3 relative group">
+                                <img class="animate-pulse group-hover:animate-none group-focus:animate-none "
+                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/download.svg" />
+                                <h1 class="text-white font-bold md:md:text-base text-sm text-sm ">Download Now</h1>
+                            </button>
+                            <button
+                                class="flex items-center justify-center duration-150 bg-[#C6DBFF] hover:bg-blue-300 focus:bg-blue-300  lg:w-[201px] w-full lg:mt-0 mt-3 md:py-5 py-3 rounded-lg gap-3 relative group">
+                                <img class="animate-pulse group-hover:animate-none group-focus:animate-none "
+                                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/play-circle.svg" />
+                                <h1 class="text-[#3B82F6] font-bold md:md:text-base text-sm text-sm ">See in Action
+                                </h1>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="lg:mt-0 mt-4">
+                        <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Group%201.png" />
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Hero section end -->
+
+        <!-- cards -->
+        <div
+            class="lg:max-w-[1440px]  md:max-w-[744px] max-w-[375px] m-auto px-5 lg::py-16 md:py-5 py-5 bg-no-repeat  bg-left lg:mt-12 mt-0  bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20620.png')]">
+            <div class="lg:max-w-[1180px]  w-full  m-auto">
+                <div class="lg:flex justify-center items-center gap-5">
+                    <h1
+                        class="text-center lg:md:text-[32px] text-[20px md:text-[26px] text-[16px] font-medium text-[#193766] lg:w-[574px] w-full ">
+                        Figma Social Feeds is designed for everyone. Use for whatever you want, it’s completely
+                        free!
+                    </h1>
+                </div>
+                <div class="lg:flex justify-between items-center mt-12">
+                    <button
+                        class="hover:bg-[#193766] focus:bg-[#193766] lg:w-[373.33px] w-full lg:p-10 md:p-8 p-4 group relative rounded-xl lg:mt-0">
+                        <div
+                            class="bg-[#193766] group-focus:bg-blue-950  group-hover:bg-blue-950 w-[70px] h-[70px] rounded-lg">
+                            <img class="mx-auto pt-5"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Group%207.svg" />
+                        </div>
+                        <h1
+                            class="md:text-2xl text-lg text-[#193766] group-hover:text-white group-focus:text-white font-bold mt-5 text-left ">
+                            For Designer</h1>
+                        <h1
+                            class="text-left md:mt-5 mt-3 text-[#697B98] group-hover:text-white group-focus:text-white  md:md:text-base text-sm text-sm lg:w-[268px] w-full leading-8">
+                            Busy designers want to share insights, such as tips, tricks or other types of insights.
+                            Focus on
+                            content not on design.
+                        </h1>
+                    </button>
+                    <button
+                        class="hover:bg-[#193766] focus:bg-[#193766] lg:w-[373.33px] w-full lg:p-10 md:p-8 p-4 group relative rounded-xl mt-3 lg:mt-0">
+                        <div
+                            class="bg-[#193766] group-focus:bg-blue-950  group-hover:bg-blue-950 w-[70px] h-[70px] rounded-lg">
+                            <img class="mx-auto pt-5"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Frame%20%2851%29.svg" />
+                        </div>
+                        <h1
+                            class="md:text-2xl text-lg text-[#193766] group-hover:text-white group-focus:text-white font-bold mt-5 text-left ">
+                            For Coder</h1>
+                        <h1
+                            class="text-left md:mt-5 mt-3 text-[#697B98] group-hover:text-white group-focus:text-white  md:md:text-base text-sm text-sm lg:w-[268px] w-full leading-8">
+                            Busy designers want to share insights, such as tips, tricks or other types of insights.
+                            Focus on
+                            content not on
+                            design.
+                        </h1>
+                    </button>
+                    <button
+                        class="hover:bg-[#193766] focus:bg-[#193766] lg:w-[373.33px] w-full lg:p-10 md:p-8 p-4 group relative rounded-xl mt-3 lg:mt-0">
+                        <div
+                            class="bg-[#193766] group-focus:bg-blue-950  group-hover:bg-blue-950 w-[70px] h-[70px] rounded-lg">
+                            <img class="mx-auto pt-5"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Frame%20%2852%29.svg" />
+                        </div>
+                        <h1
+                            class="md:text-2xl text-lg text-[#193766] group-hover:text-white group-focus:text-white font-bold mt-5 text-left ">
+                            For Marketer</h1>
+                        <h1
+                            class="text-left md:mt-5 mt-3 text-[#697B98] group-hover:text-white group-focus:text-white  md:md:text-base text-sm text-sm lg:w-[268px] w-full leading-8">
+                            Promote the product in an elegant and attractive way to get more attention from
+                            potential
+                            customers. Just duplicate and
+                            export!
+                        </h1>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Cards -->
+
+    <!-- Templates are ready to use section -->
+    <div
+        class="lg:max-w-[1440px]  md:max-w-[744px] max-w-[375px]  m-auto px-5 py-16 bg-no-repeat  bg-right   bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20621.png')]">
+        <div class="lg:max-w-[1180px]  w-full  m-auto">
+            <div class="lg:flex justify-between items-center gap-12 lg::pt-12 md:pt-5 p-0">
+                <div class="lg:w-[573px] w-full">
+                    <h1 class="md:md:text-[32px] text-[20px  text-[20px] text-[#193766] font-medium">There are <span
+                            class="border-b border-[#193766]"> 80+ Pre-Designed</span> Templates Ready to Use
+                    </h1>
+                    <h1 class="font-normal md:text-base text-sm  text-[#697B98] md:leading-8 leading-6 mt-5">Many
+                        design
+                        choices make it free
+                        for you to make a different design every time you post. There are 80+ designs with 10+
+                        different layouts. Each layout has several designs with the same theme, just need to focus
+                        on
+                        the content!</h1>
+                    <div class="flex  gap-3 mt-5">
+                        <div class="mt-3 ">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20623.png" />
+                        </div>
+                        <div class="">
+                            <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6"><span
+                                    class="text-[#3B82F6] font-bold">Insights:</span>create content that contains
+                                insights on design, coding, or recommendations for the best
+                                tourist attractions.
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="flex  gap-3 mt-1">
+                        <div class="mt-3 ">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20623.png" />
+                        </div>
+                        <div class="">
+                            <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6"><span
+                                    class="text-[#3B82F6] font-bold">Promotions:</span> get more potential customers
+                                by
+                                making product or service promotions in a more
+                                attractive way.
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="flex  gap-3 mt-1">
+                        <div class="mt-3 ">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20623.png" />
+                        </div>
+                        <div class="">
+                            <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6"><span
+                                    class="text-[#3B82F6] font-bold">Much
+                                    More:</span>design more types of content with Social Feeds and increase
+                                followers on
+                                your social media accounts..
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+                <div class="lg:w-[624.97px] w-full">
+                    <img class="mx-auto lg:mt-0 mt-5"
+                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Group%208%20%281%29.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Templates are ready to use section end -->
+
+    <!-- It's easy to use section  -->
+    <div
+        class="lg:max-w-[1440px]  md:max-w-[744px] max-w-[375px]  m-auto px-5 lg:py-16 md:py-10 py-5 bg-no-repeat  bg-left bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20624.png')]">
+        <div class="lg:max-w-[1180px]  w-full  m-auto">
+            <div class="lg:flex lg:flex-row flex flex-col-reverse items-center">
+                <div class="">
+                    <img class="pt-12" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Group%209.png" />
+                </div>
+                <div class="lg:w-[573px] w-full">
+                    <h1 class="md:text-[32px] text-[20px text-[#193766] font-medium">Design Templates Are Highly
+                        Customizable, <span class="border-b border-[#193766]">it's easy to use!</span>
+                    </h1>
+                    <h1 class="font-normal md:text-base text-sm  text-[#697B98] md:leading-8 leading-6 mt-5">All
+                        design
+                        templates are ready to use, meaning you only need to focus on content or if necessary,
+                        adjust
+                        some properties such as color, font, font size and other properties to match your brand.
+                    </h1>
+                    <div class="flex  gap-3 mt-5">
+                        <div class="mt-3 ">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20623.png" />
+                        </div>
+                        <div class="">
+                            <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6"><span
+                                    class="text-[#3B82F6] font-bold">Font
+                                    Family: </span> use your favorite font in the design template you choose. Figma
+                                has
+                                dozens of fonts, don't worry about
+                                font!
+
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="flex  gap-3 mt-1">
+                        <div class="mt-3 ">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20623.png" />
+                        </div>
+                        <div class="">
+                            <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6"><span
+                                    class="text-[#3B82F6] font-bold">Colors:</span>adjust the color of the template
+                                design with the brand you have. Set a solid color or gradient, both of which
+                                are easy to customize.
+
+                            </h1>
+                        </div>
+                    </div>
+                    <div class="flex  gap-3 mt-1">
+                        <div class="mt-3 ">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20623.png" />
+                        </div>
+                        <div class="">
+                            <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6"><span
+                                    class="text-[#3B82F6] font-bold">Much
+                                    More:</span>set more properties to suit your desires, all the designs own
+                                proportions optimized for social media.
+                            </h1>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- It's easy to use section end -->
+
+    <!-- Section PREVIEW -->
+    <div
+        class="lg:max-w-[1440px]  md:max-w-[744px] max-w-[375px]  mx-auto px-5 lg:py-16 md:py-10 py-5 bg-no-repeat  bg-cover bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20630.png')]">
+        <div class="lg:max-w-[1180px]  w-full  m-auto">
+            <div class="py-14">
+                <div class="flex justify-center items-center pt-12 ">
+                    <button
+                        class="hover:text-white focus:text-white py-2 rounded-full bg-blue-900 text-[#3B82F6] px-6  animate-bounce hover:animate-none focus:animate-none">PREVIEW</button>
+                </div>
+                <div class="flex justify-center mt-7">
+                    <h1 class="text-white font-medium md:text-[32px] text-[20px text-center lg:w-[777px] w-full">
+                        Social
+                        Feeds is a Figma design
+                        template,and everyone can use Figma!</h1>
+                </div>
+                <div class="bg-blue-900 rounded-3xl mx-auto lg:w-[988px] w-full  pt-5 lg:py-8 py-5 mt-12 lg:px-0 px-5 ">
+                    <div class="flex justify-between items-center lg:px-8 px-0">
+                        <div class="lg:w-22 md:w-20 w-12 ">
+                            <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Group%2011.svg" />
+                        </div>
+                        <div class="">
+                            <h1 class="lg:text-[22px] text-[12px] font-medium text-gray-100 mr-14">Figma</h1>
+                        </div>
+                        <div class=""></div>
+
+                    </div>
+                    <img class="mx-auto pt-4" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20625.png" />
+                </div>
+                <div class="flex justify-between items-center lg:py-10 md:p-7 p-4 mx-auto lg:w-[778px] w-full">
+                    <h1 class="text-gray-50 md:text-base text-sm font-medium text-center mt-10 ">Like the demo
+                        above,
+                        you can use Social Feeds with ease, just need to duplicate the template
+                        design you want, design the
+                        content, and export!</h1>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section PREVIEW end -->
+
+
+    <!--Section All social media -->
+    <div
+        class="lg:max-w-[1440px]  md:max-w-[744px] max-w-[375px] m-auto px-5 py-16 bg-no-repeat  bg-right   bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20631.png')]">
+        <div class="lg:max-w-[1180px]  w-full  m-auto">
+            <div class="lg:flex justify-between gap-12 pt-12">
+                <div class="lg:w-[574px] w-full">
+                    <h1 class="md:text-[32px] text-[20px text-[#193766] font-medium"> Optimized For Posts on
+                        <span class="border-b border-[#193766]">All Social Media:</span>Facebook, Instagram &
+                        Twitter
+                    </h1>
+                    <h1 class="font-normal md:text-base text-sm  text-[#697B98] leading-8 mt-5">The design has an
+                        aspect
+                        ratio of
+                        1:1 which the majority of social media recommends. The image quality is also high
+                        (1080 * 1080), you can further increase the image quality to 2x or more so that the design
+                        looks
+                        sharper.</h1>
+                    <!-- Button section -->
+                    <button
+                        class="my-5 flex justify-between p-7 bg-transparent hover:shadow-lg hover:bg-[#3B82F6] focus:bg-[#3B82F6] w-full hover:rounded-xl focus:rounded-xl rounded-none relative group border-b">
+                        <div class="">
+                            <h1
+                                class="md:text-base text-sm font-bold group-hover:text-white group-focus:text-white text-[#193766]">
+                                Preview For Instagram
+                            </h1>
+                        </div>
+                        <div class="">
+                            <img class="group-hover:hidden group-focus:hidden block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/arrow-right%20%282%29.svg" />
+                            <img class="hidden group-hover:block group-focus:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/arrow-right%20%281%29.svg" />
+                        </div>
+                    </button>
+                    <button
+                        class="my-5 flex justify-between p-7 bg-transparent hover:shadow-lg hover:bg-[#3B82F6] focus:bg-[#3B82F6] w-full hover:rounded-xl focus:rounded-xl rounded-none relative group border-b">
+                        <div class="">
+                            <h1
+                                class="md:text-base text-sm font-bold group-hover:text-white group-focus:text-white text-[#193766]">
+                                Preview For Facebook
+                            </h1>
+                        </div>
+                        <div class="">
+                            <img class="group-hover:hidden group-focus:hidden block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/arrow-right%20%282%29.svg" />
+                            <img class="hidden group-hover:block group-focus:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/arrow-right%20%281%29.svg" />
+                        </div>
+                    </button>
+                    <button
+                        class="my-5 flex justify-between p-7 bg-transparent hover:shadow-lg hover:bg-[#3B82F6] focus:bg-[#3B82F6] w-full hover:rounded-xl focus:rounded-xl rounded-none relative group ">
+                        <div class="">
+                            <h1
+                                class="md:text-base text-sm font-bold group-hover:text-white group-focus:text-white text-[#193766]">
+                                Preview For Twitter
+                            </h1>
+                        </div>
+                        <div class="">
+                            <img class="group-hover:hidden group-focus:hidden block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/arrow-right%20%282%29.svg" />
+                            <img class="hidden group-hover:block group-focus:block"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/arrow-right%20%281%29.svg" />
+                        </div>
+                    </button>
+                </div>
+                <div class="lg:mt-0 mt-5">
+                    <img class="mx-auto" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/image%205%20%281%29.png" />
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Section all social mediaend -->
+
+
+    <!-- Section uses -->
+    <div
+        class="lg:max-w-[1440px]  md:max-w-[744px] max-w-[375px]  m-auto px-5 py-16 bg-no-repeat bg-left bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20634.png')]">
+        <div class="lg:max-w-[1180px]  w-full  m-auto">
+            <div class="lg:flex lg:flex-row flex flex-col-reverse items-center justify-between gap-12 lg:pt-12 pt-0">
+                <div class="lg:w-[579px] w-full">
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/image%206%20%281%29.png" />
+                </div>
+                <div class="lg:w-[574px] w-full">
+                    <h1 class="md:text-[32px] text-[20px text-[#193766] font-medium">Figma Social Feeds is Free For
+                        <span class="border-b border-[#3B82F6] text-[#3B82F6]">Personal</span> or <span
+                            class="border-b border-[#3B82F6] text-[#3B82F6]">Commercial</span>
+                        Use
+                    </h1>
+                    <h1 class="font-normal md:text-base text-sm  text-[#697B98] leading-8 mt-5">
+                        Figma Social Feeds is licensed under CC BY 4.0, which means you are free to use template
+                        designs
+                        for personal or
+                        commercial purposes with attribution to the template design creator.
+
+                        <div class="flex  gap-3 mt-5">
+                            <div class="mt-1.5 ">
+                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/check.svg" />
+                            </div>
+                            <div class="">
+                                <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6">Design
+                                    content
+                                    for products to
+                                    be sold
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="flex  gap-3 mt-5">
+                            <div class="mt-1.5 ">
+                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/check.svg" />
+                            </div>
+                            <div class="">
+                                <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6">Design
+                                    content to
+                                    offer
+                                    services
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="flex  gap-3 mt-5">
+                            <div class="mt-1.5 ">
+                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/check.svg" />
+                            </div>
+                            <div class="">
+                                <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6">Create
+                                    product
+                                    that include
+                                    Social Feeds
+                                    as features in it
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="flex  gap-3 mt-5">
+                            <div class="mt-1.5 ">
+                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/close%20%285%29.svg" />
+                            </div>
+                            <div class="">
+                                <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6">Resell it
+                                    without
+                                    making
+                                    significant
+                                    changes
+                                </h1>
+                            </div>
+                        </div>
+                        <div class="flex  gap-3 mt-5">
+                            <div class="mt-1.5 ">
+                                <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/close%20%285%29.svg" />
+                            </div>
+                            <div class="">
+                                <h1 class="text-[#193766] md:text-base text-sm md:leading-8 leading-6">Create design
+                                    generator tool
+                                    that include Social Feeds
+                                </h1>
+                            </div>
+                        </div>
+
+                        <button
+                            class="mt-8 flex items-center justify-center duration-150 border-[#3B82F6] border-2 hover:bg-blue-50 focus:bg-bg-blue-50 bg-white  lg:w-[192px] w-full  md:py-5 py-3 rounded-md gap-3 relative group">
+                            <h1 class="text-[#3B82F6] font-bold md:text-base text-sm ">Read License</h1>
+                            <img class="animate-pulse group-hover:animate-none group-focus:animate-none"
+                                src="https://tuk-cdn.s3.amazonaws.com/can-uploader/external-link.svg" />
+                        </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--Section uses end  -->
+
+    <!-- Section Download -->
+    <div class="lg:max-w-[1180px] md:max-w-[744px] max-w-[375px]  m-auto px-5 py-16 ">
+        <div class="flex justify-center items-center lg:pt-12 md:pt-5 p-0 ">
+            <button
+                class="font-bold py-2 rounded-full md:text-base text-sm  bg-blue-50 text-[#3B82F6] w-[145px]  animate-bounce hover:animate-none focus:animate-none">DOWNLOAD</button>
+        </div>
+        <h1 class="text-center mt-5 text-[#193766] md:text-[32px] text-[20px font-medium">Download Figma <span
+                class="border-b border-[#3B82F6] text-[#3B82F6]">Social Feed</span> Now
+        </h1>
+        <div class="flex justify-center items-center">
+            <h1 class="font-normal md:text-base text-sm  text-[#697B98] leading-8 mt-5 lg:w-[574px] w-full text-center">
+                Figma Social Feeds is free for everyone, create content for promotion, share insights and get
+                creative
+                on
+                the internet.
+            </h1>
+        </div>
+        <div class="lg:flex mt-5 justify-center gap-4">
+            <button
+                class="flex items-center justify-center duration-150 bg-[#3B82F6] hover:bg-blue-600 focus:bg-blue-600  lg:w-[214px] w-full lg:py-5 py-3 rounded-lg gap-3 relative group">
+                <img class="animate-pulse group-hover:animate-none group-focus:animate-none "
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/download.svg" />
+                <h1 class="text-white font-bold md:text-base text-sm ">Download Now</h1>
+            </button>
+            <button
+                class="lg:mt-0 mt-3 flex items-center justify-center duration-150 bg-[#1DA1F2] hover:bg-blue-600 focus:bg-blue-600 lg:w-[201px] w-full  lg:py-5 py-3 rounded-lg gap-3 relative group">
+                <h1 class="text-white font-bold md:text-base text-sm ">Say Thanks</h1>
+                <img class="animate-pulse group-hover:animate-none group-focus:animate-none "
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/twitter.png" />
+
+            </button>
+        </div>
+        <div class="block lg:hidden">
+            <div class="flex flex-col justify-center items-center -mt-2">
+                <div class=" ">
+                    <img class="animate-pulse"
+                        src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Vector%201%20%283%29.svg" />
+                </div>
+                <div class=" ml-14">
+                    <img class="animate-pulse" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/tweet%20now%21.svg" />
+                </div>
+            </div>
+        </div>
+        <div class="hidden lg:block">
+            <div class="flex justify-end mr-72 -mt-5">
+                <img class="animate-pulse"
+                    src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Vector%201%20%283%29.svg" />
+            </div>
+            <div class="flex justify-end mr-64 ">
+                <img class="animate-pulse" src="https://tuk-cdn.s3.amazonaws.com/can-uploader/tweet%20now%21.svg" />
+            </div>
+        </div>
+    </div>
+    <!--Section Download  -->
+
+    <!-- Footer -->
+
+    <div
+        class="lg:max-w-[1440px]  md:max-w-[744px] max-w-[375px]  mx-auto px-5 py-16 bg-no-repeat  bg-cover bg-[url('https://tuk-cdn.s3.amazonaws.com/can-uploader/Rectangle%20632.png')]">
+        <div class="lg:max-w-[1180px]  w-full  m-auto">
+            <div class="grid lg:grid-cols-2 grid-cols-1 pt-32 pb-12 gap-8 justify-between w-full ">
+
+                <div class="   ">
+                    <img src="https://tuk-cdn.s3.amazonaws.com/can-uploader/Frame%20348%20%281%29.svg" />
+                    <h1 class="font-bold text-white text-lg mt-4">Wumbo</h1>
+                    <h1 class="md:text-base text-sm font-normal text-gray-300 leading-8 mt-4 lg:w-[574px] w-full">
+                        Wumbo is a team of creative developers who have an interest in design. We create
+                        designtemplates, UI kits and other products that make people's work easier and faster.
+                    </h1>
+                </div>
+                <div class="md:flex justify-between">
+                    <div class="  ">
+                        <h1 class=" font-bold text-sm text-gray-300">PRODUCTS</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Social Feeds</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">React UI Kit</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Stisla Design</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">More Products</h1>
+                    </div>
+                    <div class="md:mt-0 mt-8">
+                        <h1 class="font-bold text-sm text-gray-300">COMPANY</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">About Us</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Contact</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Privacy Policy</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Terms of Service</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Help</h1>
+                    </div>
+                    <div class="md:mt-0 mt-8">
+                        <h1 class="font-bold text-sm text-gray-300">GET IN TOUCH</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Twitter</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Facebook</h1>
+                        <h1 class="font-normal md:text-base text-sm text-gray-300 mt-3">Dribbble</h1>
+                    </div>
+                </div>
+            </div>
+            <div class="mt-5 border-t border-gray-500 w-full py-8">
+                <h1 class="text-gray-400 font-bold text-sm ">COPYRIGHT © 2022 — DESIGN NAUVAL</h1>
+            </div>
+        </div>
+    </div>
+    <script>
+        let sideBar = document.getElementById("mobile-nav");
+        let menu = document.getElementById("menu");
+        let cross = document.getElementById("cross");
+        sideBar.style.transform = "translateX(-900px)";
+        const sidebarHandler = (check) => {
+            if (check) {
+                sideBar.style.transform = "translateX(0px)";
+                menu.classList.add("hidden");
+                cross.classList.remove("hidden");
+            } else {
+                sideBar.style.transform = "translateX(-900px)";
+                menu.classList.remove("hidden");
+                cross.classList.add("hidden");
+            }
+        };
+    </script>
 </body>
 
 </html>
